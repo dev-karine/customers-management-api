@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: customer-management-api
+  datasource:
+    url: jdbc:h2:mem:customersdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+server:
+  port: ${SERVER_PORT:8080}
+
+score-service:
+  base-url: ${SCORE_SERVICE_BASE_URL:http://localhost:9090}
+  connect-timeout: ${SCORE_SERVICE_CONNECT_TIMEOUT:1s}
+  read-timeout: ${SCORE_SERVICE_READ_TIMEOUT:2s}
+
+app:
+  security:
+    user:
+      username: ${APP_USER_USERNAME:user}
+      password: ${APP_USER_PASSWORD:user123}
+    admin:
+      username: ${APP_ADMIN_USERNAME:admin}
+      password: ${APP_ADMIN_PASSWORD:admin123}

@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "Customer Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {"key": "baseUrl", "value": "http://localhost:8080"},
+    {"key": "customerId", "value": "1"}
+  ],
+  "item": [
+    {
+      "name": "Create customer (ADMIN)",
+      "request": {
+        "method": "POST",
+        "auth": {"type":"basic","basic":[{"key":"username","value":"admin","type":"string"},{"key":"password","value":"admin123","type":"string"}]},
+        "header": [{"key":"Content-Type","value":"application/json"}],
+        "body": {"mode":"raw","raw":"{\n  \"name\": \"Joao da Silva\",\n  \"cpf\": \"12345678901\",\n  \"email\": \"joao@email.com\",\n  \"status\": \"ACTIVE\"\n}"},
+        "url": {"raw":"{{baseUrl}}/customers","host":["{{baseUrl}}"],"path":["customers"]}
+      }
+    },
+    {
+      "name": "List customers (USER)",
+      "request": {
+        "method": "GET",
+        "auth": {"type":"basic","basic":[{"key":"username","value":"user","type":"string"},{"key":"password","value":"user123","type":"string"}]},
+        "url": {"raw":"{{baseUrl}}/customers","host":["{{baseUrl}}"],"path":["customers"]}
+      }
+    },
+    {
+      "name": "Get customer score (USER)",
+      "request": {
+        "method": "GET",
+        "auth": {"type":"basic","basic":[{"key":"username","value":"user","type":"string"},{"key":"password","value":"user123","type":"string"}]},
+        "url": {"raw":"{{baseUrl}}/customers/{{customerId}}/score","host":["{{baseUrl}}"],"path":["customers","{{customerId}}","score"]}
+      }
+    }
+  ]
+}

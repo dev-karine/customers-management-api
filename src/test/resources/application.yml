@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+score-service:
+  base-url: http://localhost:65530
+  connect-timeout: 200ms
+  read-timeout: 300ms
+app:
+  security:
+    user:
+      username: user
+      password: user123
+    admin:
+      username: admin
+      password: admin123

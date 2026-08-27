@@ -1,0 +1,8 @@
+services:
+  score-mock:
+    image: wiremock/wiremock:3.13.1
+    ports:
+      - "9090:8080"
+    volumes:
+      - ./wiremock:/home/wiremock
+    command: ["--global-response-templating", "--verbose"]
