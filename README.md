@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# customers-management-api
-=======
+
 # Customer Management API
 
 Microsserviço desenvolvido para o desafio técnico de **Desenvolvedor Java Pleno**. A aplicação gerencia clientes via REST e consulta o score do cliente em um serviço HTTP externo.
